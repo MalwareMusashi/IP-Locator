@@ -1,14 +1,9 @@
-#!/usr/bin/env python3
-# quick and dirty ipinfo lookup using curl
-# why curl? because i already have it everywhere and dont want deps
-
 import subprocess as sp
 import json
 import sys
 import os
 from pathlib import Path
 
-# ascii art cause why not
 BANNER = r"""
  _____ _____  _                     _             
 |_   _|  __ \| |                   | |            
@@ -18,7 +13,6 @@ BANNER = r"""
 |_____|_|    |______\___/ \___\__,_|\__\___/|_|   
 """
 
-# hacky color support
 RED = '\033[91m'
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
@@ -36,7 +30,6 @@ def lookup(ip=''):
     """lookup ip info"""
     url = f'https://ipinfo.io/{ip}/json' if ip else 'https://ipinfo.io/json'
     
-    # add token from env if exists
     token = os.getenv('IPINFO_TOKEN')
     if token:
         url += f'?token={token}'
@@ -64,7 +57,7 @@ def show(data):
     print()
 
 def main():
-    # super simple arg parsing
+    
     if len(sys.argv) > 1:
         if sys.argv[1] in ['-h', '--help']:
             print(BANNER)
@@ -80,11 +73,11 @@ Set IPINFO_TOKEN env var for more requests.""")
         
         target = sys.argv[1]
     else:
-        # interactive - show banner
+        
         print(BANNER)
         target = input("IP/hostname (Enter for your IP): ").strip()
     
-    # do it
+    
     data = lookup(target)
     if data:
         show(data)
