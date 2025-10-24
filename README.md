@@ -1,4 +1,4 @@
-How to Install and Run it Anywhere
+***How to Install and Run it Anywhere***
 
 Download the script
 
