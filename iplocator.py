@@ -19,7 +19,6 @@ YELLOW = '\033[93m'
 NC = '\033[0m'
 
 def curl(url):
-    """run curl, return output or None"""
     try:
         r = sp.run(['curl', '-s', url], capture_output=True, text=True, timeout=10)
         return r.stdout if r.returncode == 0 else None
@@ -27,7 +26,6 @@ def curl(url):
         return None
 
 def lookup(ip=''):
-    """lookup ip info"""
     url = f'https://ipinfo.io/{ip}/json' if ip else 'https://ipinfo.io/json'
     
     token = os.getenv('IPINFO_TOKEN')
@@ -46,7 +44,6 @@ def lookup(ip=''):
         return None
 
 def show(data):
-    """print the data nicely"""
     if not data:
         return
     
