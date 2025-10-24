@@ -9,7 +9,7 @@ curl -O https://raw.githubusercontent.com/MalwareMusashi/IP-Locator/main/iplooku
 
 Or clone the repo:
 ```
-git clone https://github.com/MalwareMusashi/IP-Locator.git
+git clone https://github.com/MalwareMusashi/IP-Locator/tree/main
 cd iplookup
 ```
 
