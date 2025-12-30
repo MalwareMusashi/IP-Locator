@@ -56,4 +56,4 @@ iplookup 8.8.8.8    # Google DNS
 iplookup google.com # hostname lookup
 ```
 
-That’s it. It’s a single-file tool—no installs, no libraries, just curl and Python.
+That’s it. It’s a single-file tool no installs, no libraries, just curl and Python.
